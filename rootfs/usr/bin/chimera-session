@@ -56,7 +56,7 @@ function desktop() {
 function gamepadui() {
 	# switch to Gamepad/Deck UI (Gamescope/Wayland)
 	echo '' > ${SESSION_CONFIG}
-	sudo chimera-session-use-lightdm gamescope-session
+	sudo chimera-session-use-lightdm opengamepadui-session
 	systemctl --user disable sxhkd
 	systemctl --user stop sxhkd
 }
