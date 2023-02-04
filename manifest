@@ -92,6 +92,7 @@ export PACKAGES="\
 	nvidia-dkms \
 	nvidia-prime \
 	nvidia-utils \
+	ogui-git \
 	openal \
 	openssh \
 	pipewire \
@@ -134,7 +135,6 @@ export AUR_PACKAGES="\
 	chimeraos-device-quirks-git \
 	frzr \
 	gamescope-plus \
-	gamescope-session-git \
 	handygccs-git \
 	hhfc-git \
 	legendary \
