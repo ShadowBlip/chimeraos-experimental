@@ -92,7 +92,6 @@ export PACKAGES="\
 	nvidia-dkms \
 	nvidia-prime \
 	nvidia-utils \
-	ogui-git \
 	openal \
 	openssh \
 	pipewire \
@@ -142,6 +141,7 @@ export AUR_PACKAGES="\
 	libretro-stella2014-git \
 	libretro-virtualjaguar-git \
 	nintendo-udev \
+	ogui-git \
 	oxp-platform-dkms-git \
 	python-vdf \
 	r8152-dkms \
