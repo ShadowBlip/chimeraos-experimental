@@ -165,7 +165,6 @@ export AUR_PACKAGES="\
 	rtl88x2bu-dkms-git \
 	rtw89-dkms-git \
 	ryzenadj-git \
-	ryzenadj-controller-git \
 	rz608-fix-git \
 	steam-removable-media-git \
 	steamos-compositor-plus \
@@ -186,7 +185,6 @@ export SERVICES="\
 	handycon \
 	haveged \
 	lightdm \
-	ryzenadj-controller \
 	sshd \
 	systemd-timesyncd \
 "
@@ -194,7 +192,6 @@ export SERVICES="\
 export USER_SERVICES="\
 	chimera.service \
 	gamemoded.service \
-	ryzen-tctl \
 	steam-patch.service \
 "
 

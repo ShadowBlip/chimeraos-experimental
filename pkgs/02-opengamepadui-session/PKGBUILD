@@ -1,15 +1,11 @@
 pkgname=opengamepadui-session-git
 _gitdir=OpenGamepadUI-session
-pkgver=r1.2e20ab2
+pkgver=r2.9f5cf87
 pkgrel=1
 pkgdesc="OpenGamepadUI Gamescope session for ChimeraOS Experimental"
 arch=('any')
 url="https://github.com/ShadowBlip/OpenGamepadUI-session"
-license=('WTFPL')
-groups=()
-#depends=('gamescope')
 makedepends=('git')
-#install=opengamepadui-session.install
 source=("${_gitdir}::git+https://github.com/ShadowBlip/${_gitdir}.git")
 md5sums=('SKIP')
 
@@ -21,5 +17,4 @@ pkgver() {
 package() {
 	cd "$srcdir/${_gitdir}"
   cp -rv ${srcdir}/${_gitdir}/usr ${pkgdir}/usr
-#  install -Dm644 ${srcdir}/${_gitdir}/LICENSE ${pkgdir}/usr/share/licenses/${_gitdir}/LICENSE
 }
