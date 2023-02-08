@@ -31,6 +31,7 @@ export PACKAGES="\
 	ethtool \
 	ffmpeg \
 	file-roller \
+	filejail \
 	flatpak \
 	fmt \
 	fuse2 \
@@ -146,6 +147,7 @@ export AUR_PACKAGES="\
 	chimeraos-device-quirks-git \
 	frzr \
 	gamescope-plus \
+	gamescope-session-git \
 	handygccs-git \
 	hhfc-git \
 	legendary \

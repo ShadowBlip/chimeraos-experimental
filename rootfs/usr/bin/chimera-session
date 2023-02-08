@@ -70,6 +70,14 @@ function gamepadui() {
 	sudo chimera-session-use-lightdm gamescope-session
 }
 
+function ogui() {
+	# switch to Gamepad/Deck UI (Gamescope/Wayland)
+	echo '' > ${SESSION_CONFIG}
+	sudo chimera-session-use-lightdm opengamepadui-session
+	systemctl --user disable sxhkd
+	systemctl --user stop sxhkd
+}
+
 function print_invalid_session() {
 	echo "Unknown or invalid session type: ${SELECTED_SESSION}"
 	echo
@@ -104,4 +112,7 @@ elif [ "${SELECTED_SESSION}" = "desktop-xorg" ]; then
 elif [ "${SELECTED_SESSION}" = "gamepadui" ]; then
 	echo "Switching to gamepadui"
 	gamepadui
+elif [ "${SELECTED_SESSION}" = "ogui" ]; then
+	echo "Switching to opengamepadui"
+	ogui
 fi
