@@ -56,6 +56,14 @@ function desktop() {
 function gamepadui() {
 	# switch to Gamepad/Deck UI (Gamescope/Wayland)
 	echo '' > ${SESSION_CONFIG}
+	sudo chimera-session-use-lightdm gamepadui
+	systemctl --user disable sxhkd
+	systemctl --user stop sxhkd
+}
+
+function ogui() {
+	# switch to Gamepad/Deck UI (Gamescope/Wayland)
+	echo '' > ${SESSION_CONFIG}
 	sudo chimera-session-use-lightdm opengamepadui-session
 	systemctl --user disable sxhkd
 	systemctl --user stop sxhkd
@@ -92,4 +100,7 @@ elif [ "${SELECTED_SESSION}" = "desktop" ]; then
 elif [ "${SELECTED_SESSION}" = "gamepadui" ]; then
 	echo "Switching to gamepadui"
 	gamepadui
+elif [ "${SELECTED_SESSION}" = "ogui" ]; then
+	echo "Switching to opengamepadui"
+	ogui
 fi
