@@ -31,7 +31,7 @@ export PACKAGES="\
 	eog \
 	ethtool \
 	file-roller \
-	filejail \
+	firejail \
 	flatpak \
 	fmt \
 	fuse2 \
