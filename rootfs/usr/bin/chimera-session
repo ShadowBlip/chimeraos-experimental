@@ -4,7 +4,7 @@ DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
 CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 SESSION_CONFIG="${CONFIG_HOME}/environment.d/01-chimera-session.conf"
 SESSION_LIGHTDM_CONFIG="/etc/lightdm/lightdm.conf.d/10-chimeraos-session.conf"
-SESSION_LIST=('bigpicture' 'desktop' 'desktop-xorg' 'gamepadui')
+SESSION_LIST=('bigpicture' 'desktop' 'desktop-xorg' 'gamepadui' 'ogui' 'oguiqam')
 SELECTED_SESSION="$1"
 
 
@@ -27,6 +27,10 @@ function print_session_list() {
 
 	if grep "gamescope-session" ${SESSION_LIGHTDM_CONFIG} &> /dev/null; then
 		CURRENT_SESSION="gamepadui"
+	fi
+
+	if grep "opengamepadui-session" ${SESSION_LIGHTDM_CONFIG} &> /dev/null; then
+		CURRENT_SESSION="ogui"
 	fi
 
 	# print active and available sessions
@@ -76,6 +80,12 @@ function ogui() {
 	sudo chimera-session-use-lightdm opengamepadui-session
 }
 
+function oguiqam() {
+	# switch to OpenGamepadUI (Gamescope/Wayland)
+	echo '' > ${SESSION_CONFIG}
+	sudo chimera-session-use-lightdm gamescope-ogui-qam-session
+}
+
 function print_invalid_session() {
 	echo "Unknown or invalid session type: ${SELECTED_SESSION}"
 	echo
@@ -113,4 +123,7 @@ elif [ "${SELECTED_SESSION}" = "gamepadui" ]; then
 elif [ "${SELECTED_SESSION}" = "ogui" ]; then
 	echo "Switching to opengamepadui"
 	ogui
+elif [ "${SELECTED_SESSION}" = "gamepadui-oguiqam" ]; then
+	echo "Switching to gamepadui with opengamepadui quick access menu"
+	oguiqam
 fi
