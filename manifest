@@ -142,7 +142,7 @@ export AUR_PACKAGES="\
 	libretro-stella2014-git \
 	libretro-virtualjaguar-git \
 	nintendo-udev \
-	ogui-bin \
+	ogui-git \
 	opengamepadui-session-git \
 	oxp-platform-dkms-git \
 	python-vdf \
