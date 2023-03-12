@@ -33,6 +33,10 @@ function print_session_list() {
 		CURRENT_SESSION="ogui"
 	fi
 
+	if grep "gamescope-ogui-qam-session" ${SESSION_LIGHTDM_CONFIG} &> /dev/null; then
+		CURRENT_SESSION="oguiqam"
+	fi
+
 	# print active and available sessions
 	for t in ${SESSION_LIST[@]}; do
 		if [ "${CURRENT_SESSION}" = "${t}" ]; then
@@ -123,7 +127,7 @@ elif [ "${SELECTED_SESSION}" = "gamepadui" ]; then
 elif [ "${SELECTED_SESSION}" = "ogui" ]; then
 	echo "Switching to opengamepadui"
 	ogui
-elif [ "${SELECTED_SESSION}" = "gamepadui-oguiqam" ]; then
+elif [ "${SELECTED_SESSION}" = "oguiqam" ]; then
 	echo "Switching to gamepadui with opengamepadui quick access menu"
 	oguiqam
 fi
